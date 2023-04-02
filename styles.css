@@ -222,7 +222,7 @@ a:hover {
     place-content: center;
   }
   main {
-    max-width: 45vw;
+    max-width: 43vw;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     border-radius: 25px;
