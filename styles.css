@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+:root {
+  /* --------------COLOURS-------------------- */
+
+  /* -----PRIMARY----- */
+
+  --LIGHT-RED: hsl(0, 100%, 67%);
+  --ORANGEY-YELLOW: hsl(39, 100%, 56%);
+  --TEAL-GREEN: hsl(166, 100%, 37%);
+  --COBALT-BLUE: hsl(234, 85%, 45%);
+
+  /* -----GRADIENTS----- */
+
+  --BG-LIGHT-SLATE-BLUE: hsl(252, 100%, 67%);
+  --BG-LIGHT-ROYAL-BLUE: hsl(241, 81%, 54%);
+
+  --CIRCLE-VIOLET-BLUE: hsla(256, 72%, 46%, 1);
+  --CIRCLE-PERSIAN-BLUE: hsla(241, 72%, 46%, 0);
+
+  /* -----NEUTRAL----- */
+
+  --WHITE: hsl(0, 0%, 100%);
+  --PALE-BLUE: hsl(221, 100%, 96%);
+  --LIGHT-LAVENDER: hsl(241, 100%, 89%);
+  --DARK-GRAY-BLUE: hsl(224, 30%, 27%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.result-section {
+  background: linear-gradient(
+    to bottom,
+    var(--BG-LIGHT-SLATE-BLUE),
+    var(--BG-LIGHT-ROYAL-BLUE)
+  );
+  color: white;
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5em;
+  justify-content: space-between;
+}
+
+.result {
+  color: var(--LIGHT-LAVENDER);
+  font-size: 1.2em;
+}
+
+.circle {
+  width: 9em;
+  height: 9em;
+  border-radius: 50%;
+  margin-block: 1em;
+  display: grid;
+  place-content: center;
+  background: linear-gradient(
+    to bottom,
+    var(--CIRCLE-VIOLET-BLUE),
+    var(--CIRCLE-PERSIAN-BLUE)
+  );
+}
+
+.circle h1 {
+  font-size: 4em;
+}
+
+.circle span {
+  opacity: 0.4;
+}
+
+.subheading h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.text {
+  color: var(--LIGHT-LAVENDER);
+}
+
+.summary-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  gap: 0.8em;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8em;
+  background: var(--item);
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  animation: move 1.5s ease-out forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(var(--origin));
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.items {
+  display: flex;
+  gap: 0.8em;
+}
+
+.summary {
+  color: var(--clr);
+  font-weight: 700;
+}
+
+.reaction {
+  --item: hsla(0, 100%, 67%, 0.1);
+  --clr: var(--LIGHT-RED);
+  --origin: -30%;
+}
+
+.memory {
+  --item: hsla(39, 100%, 56%, 0.1);
+  --clr: var(--ORANGEY-YELLOW);
+  --origin: 30%;
+}
+
+.verbal {
+  --item: hsla(166, 100%, 37%, 0.1);
+  --clr: var(--TEAL-GREEN);
+  --origin: -30%;
+}
+
+.visual {
+  --item: hsla(234, 85%, 45%, 0.1);
+  --clr: var(--COBALT-BLUE);
+  --origin: 30%;
+}
+
+a {
+  text-align: center;
+  color: white;
+  background: var(--DARK-GRAY-BLUE);
+  padding-block: 1em;
+  border-radius: 1.5em;
+  margin-bottom: 1em;
+}
+
+a:hover {
+  background: linear-gradient(
+    to bottom,
+    var(--BG-LIGHT-SLATE-BLUE),
+    var(--BG-LIGHT-ROYAL-BLUE)
+  );
+}
+
+.rates p {
+  font-weight: 800;
+  color: var(--DARK-GRAY-BLUE);
+}
+
+.light {
+  opacity: 0.4;
+  font-weight: 500;
+}
+
+/* --------------TABLET SCREEN ------------------------- */
+
+@media screen and (min-width: 476px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+  }
+  main {
+    max-width: 70vw;
+    grid-template-columns: 1fr;
+    border-radius: 25px;
+    box-shadow: 15px 15px 35px hsla(241, 81%, 54%, 0.05);
+  }
+
+  .result-section {
+    border-radius: 25px;
+  }
+}
+
+/* --------------LAPTOPS AND LARGER SCREEN ------------------------- */
+
+@media screen and (min-width: 1025px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+  }
+  main {
+    max-width: 45vw;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    border-radius: 25px;
+    box-shadow: 15px 15px 35px hsla(241, 81%, 54%, 0.05);
+  }
+
+  .result-section {
+    border-radius: 25px;
+  }
+}
